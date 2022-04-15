@@ -1,0 +1,12 @@
+hello "'this is"
+
+0 1 2 3 4
+1 0 1 2 3
+2 1 0 1 2
+3 2 1 1 2
+4 3 2 2 2
+
+ <kep> <kep><ins b> <kep><ins b><ins d> <kep><ins b><ins d><ins c>
+ <kep><del> <kep><kep> <kep><kep><ins d> <kep><kep><ins d><ins c>
+ <kep><del><del> <kep><kep><del> <kep><kep><rep>d</rep> <kep><kep><rep>d</rep><ins c>
+ <kep><del><del><del> <kep><kep><del><del> <kep><kep><rep>d</rep><del> <kep><kep><rep>d</rep><rep>c</rep>

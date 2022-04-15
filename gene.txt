@@ -1,0 +1,21 @@
+callback . error ( responseMsg ) 
+
+@ java.lang.Override public void gotResult ( int responseCode , java.lang.String responseMsg , long groupId ) { if ( responseCode == 0 ) { callback . success ( java.lang.String . valueOf ( groupId ) ) ; } else { callback . error ( responseMsg ) ; } } 
+
+(?<=callback\ \.\ error\ \(\ responseMsg\ \)\ \
+).*
+
+
+
+
+{ lock . writeLock () . lock () ; this . idxBeingRequested . remove ( peerid ) ; lock . writeLock () . unlock () ; } 
+
+public void cancelPieceIndexRequest ( java.lang.Integer peerid ) { lock . writeLock () . lock () ; this . idxBeingRequested . remove ( peerid ) ; lock . writeLock () . unlock () ; } 
+
+(?<=\{\ lock\ \.\ writeLock\ \(\)\ \.\ lock\ \(\)\ ;\ this\ \.\ idxBeingRequested\ \.\ remove\ \(\ peerid\ \)\ ;\ lock\ \.\ writeLock\ \(\)\ \.\ unlock\ \(\)\ ;\ \}\ \
+).*
+
+
+
+
+['', '']
