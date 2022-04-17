@@ -78,7 +78,7 @@ def gene_test():
 
     c1 = open("test_prevs.txt", "r").read().rstrip("\n").split(" ")
     c2 = open("test_next.txt", "r").read().rstrip("\n").split(" ")
-    print(c1)
+    # print(c1)
     # print(c2)
 # c1_esp = re.escape(c1)
 # print(c1_esp)
@@ -91,7 +91,7 @@ def gene_test():
 
 def gene_tokens():
     file_size = ["medium", "small"]
-    file_type = ["train"]
+    file_type = ["train", "eval", "test"]
 
     for f_size in file_size:
         for f_type in file_type:
@@ -99,9 +99,22 @@ def gene_tokens():
             f1_path = "./ProjectGroupData/{}/{}/data.prev_full_code".format(f_size, f_type)
             f2_path = "./ProjectGroupData/{}/{}/data.next_full_code".format(f_size, f_type)
 
-            f1_lines = open(f1_path).read().splitlines()
-            f2_lines = open(f2_path).read().splitlines()
+            f1_lines = open(f1_path, encoding='UTF-8').read().splitlines()
+            f2_lines = open(f2_path, encoding='UTF-8').read().splitlines()
+
             file_l = len(f1_lines)
+            # max_f, max_tokens = None, 0
+            # for i in range(file_l):
+            #     if len(f1_lines[i]) > 100:
+            #         print("L:{}:Prev:{}".format(str(i), str(len(f1_lines[i]))))
+            #     if len(f2_lines[i]) > 100:
+            #         print("L:{}:Next:{}".format(str(i), str(len(f2_lines[i]))))
+            #     # if len(f1_lines[i]) > max_tokens:
+            #     max_tokens = max(max(max_tokens, len(f1_lines[i])), len(f2_lines[i]))
+                    
+            # print(max_tokens)
+
+
             final_token_seqs = []
             for i in range(file_l):
                 f1_tokens = f1_lines[i].split(" ")
@@ -109,7 +122,7 @@ def gene_tokens():
                 final_token_seqs.append(levenshteinDistanceDP(f1_tokens, f2_tokens))
 
             gene_path = "./GeneOps/{}/{}.txt".format(f_size, f_type)
-            with open(gene_path, "w") as f:
+            with open(gene_path, "w", encoding='utf-8') as f:
                 for i in final_token_seqs:
                     f.write(i + "\n")
 
