@@ -19,5 +19,10 @@ Run `sh train.sh` to start training. You may need to change some configurations 
 
 ### Test
 1. Run `sh test.sh` to generate the outputs.
-2. Use `/data_process/tokenizer_decode.py` to decode the outputs.
-3. 
+2. Spilit the output file:
+ ```
+grep ^H /content/drive/MyDrive/fairseq/lev_results/generate-test.txt | cut -f3- > /content/drive/MyDrive/fairseq/lev_results/gen.out.sys  
+grep ^T /content/drive/MyDrive/fairseq/lev_results/generate-test.txt | cut -f2- > /content/drive/MyDrive/fairseq/lev_results/gen.out.ref
+```
+4. Use `/data_process/tokenizer_decode.py` to decode the outputs.
+5. 
