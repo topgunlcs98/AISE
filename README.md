@@ -17,3 +17,7 @@ https://github.com/pytorch/fairseq/issues/2010
 ### Train the model
 Run `sh train.sh` to start training. You may need to change some configurations in this script. More details in this link: https://fairseq.readthedocs.io/en/latest/command_line_tools.html  
 
+### Test
+1. Run `sh test.sh` to generate the outputs.
+2. Use `/data_process/tokenizer_decode.py` to decode the outputs.
+3. 
