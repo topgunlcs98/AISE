@@ -25,4 +25,4 @@ grep ^H /content/drive/MyDrive/fairseq/lev_results/generate-test.txt | cut -f3- 
 grep ^T /content/drive/MyDrive/fairseq/lev_results/generate-test.txt | cut -f2- > /content/drive/MyDrive/fairseq/lev_results/gen.out.ref
 ```
 4. Use `/data_process/tokenizer_decode.py` to decode the outputs.
-5. 
+5. Enter `/codebleu` to calculate CodeBLEU
