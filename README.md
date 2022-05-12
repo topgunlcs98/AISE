@@ -4,3 +4,4 @@
 PyTorch version >= 1.5.0  
 Python version >= 3.6  
 NVIDIA GPU
+### Install Fairseq
