@@ -1,0 +1,40 @@
+<rep>d</rep>
+<ins></ins>
+
+prev_full_code, next_full_code
+
+
+Single Test:
+Delete: abc bc
+Add: bc abc
+Rep: abd acd
+Keep: acd and
+
+L:23: a b c a d
+
+
+Test Log:
+small/train
+
+L:23: 
+@ java.lang.Override public void onResume () { super . onResume () ; if ( isServiceRunning ) { updateService () ; } updateUI ( null ) ; } 
+@ java.lang.Override public void onResume () { super . onResume () ; if ( ! ( isServiceRunning ) ) { updateUI ( null ) ; } updateService () ; } 
+<kep><kep><kep><kep><kep><kep><kep><kep><kep><kep><kep><kep><kep><ins>(</ins><ins>!</ins><kep><kep><ins>)</ins><kep><kep><del><del><del><del><kep><kep><kep><kep><ins>;</ins><ins>}</ins><ins>updateService</ins><ins>()</ins><kep><kep><kep>
+
+
+Test Seq: <kep @><kep java.lang.Override><kep public><kep void><kep onResume><kep ()><kep {><kep super><kep .><kep onResume><kep ()><kep ;><kep if
+><ins>(</ins><ins>!</ins><kep (><kep isServiceRunning><ins>)</ins><kep )><kep {><del><del><del><del><kep updateUI><kep (><kep null><kep
+)><kep ;><kep }><rep>updateService</rep><ins>()</ins><ins>;</ins><ins>}</ins>
+
+Reverted: @ java.lang.Override public void onResume () { super . onResume () ; if ( ! ( isServiceRunning ) ) { updateUI ( null ) ; } updateService  () ; }
+
+
+@ java.lang.Override public void rename ( final java.lang.String newName ) { if ( ! ( name . equals ( newName ) ) ) { aliasedNames . add ( name ) ; aliasedNames . remove ( newName ) ; name = newName ; } } 
+@ java.lang.Override public void rename ( final java.lang.String newName ) { if ( ( null != newName ) && ( ! ( name . equals ( newName ) ) ) ) { aliasedNames . add ( name ) ; aliasedNames . remove ( newName ) ; name = newName ; } } 
+
+
+<kep @><kep java.lang.Override><kep public><kep void><kep rename><kep (><kep final><kep java.lang.String><kep newName><kep )><kep {><kep if><ins>(</ins><ins>(</ins><ins>null</ins><ins>!=</ins><ins>newName</ins><ins>)</ins><ins>&&</ins><kep (><kep !><kep (><kep name><kep .><kep equals><kep (><kep newName><ins>)</ins><kep )><kep )><kep )><kep {><kep aliasedNames><kep .><kep add><kep (><kep name><kep )><kep ;><kep aliasedNames><kep .><kep remove><kep (><kep newName><kep )><kep ;><kep name><kep =><kep newName><kep ;><kep }><kep }><kep >
+
+
+@ java.lang.Override public void rename ( final java.lang.String newName ) { if ( ( null != newName ) && ( ! ( name . equals ( ( newName ) ) ) ) 
+{ aliasedNames . add ( name ) ; aliasedNames . remove ( newName ) ; name = newName ; } } 
